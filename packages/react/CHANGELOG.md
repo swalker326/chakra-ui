@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.2.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`be7a20f15`](https://github.com/chakra-ui/chakra-ui/commit/be7a20f155e571a24cb99f28a5b9a60fa3b80a61)]:
+  - @chakra-ui/theme@2.1.2
+  - @chakra-ui/toast@3.0.1
+
 ## 2.2.2
 
 ### Patch Changes
