@@ -1,4 +1,9 @@
-import { chakra, SystemStyleObject, HTMLChakraProps } from "@chakra-ui/system"
+import {
+  chakra,
+  SystemStyleObject,
+  HTMLChakraProps,
+  useStyles,
+} from "@chakra-ui/system"
 import { isUndefined, StringOrNumber, __DEV__ } from "@chakra-ui/utils"
 import * as React from "react"
 import { getProgressProps, rotate, spin } from "./progress.utils"
@@ -129,6 +134,11 @@ export const CircularProgress: React.FC<CircularProgressProps> = (props) => {
     getValueText,
     isIndeterminate,
   })
+  const styles = useStyles()
+  const trackStyles = {
+    height: "100%",
+    ...styles.filledTrack,
+  }
 
   const determinant = isIndeterminate
     ? undefined
@@ -175,6 +185,7 @@ export const CircularProgress: React.FC<CircularProgressProps> = (props) => {
           strokeWidth={thickness}
           className="chakra-progress__indicator"
           strokeLinecap={capIsRound ? "round" : undefined}
+          __css={trackStyles}
           /**
            * fix issue in Safari where indicator still shows when value is 0
            * @see Issue https://github.com/chakra-ui/chakra-ui/issues/3754
